@@ -1,7 +1,4 @@
 # spec-driven-development-templates
-<<<<<<< Updated upstream
-=======
-
 ## Things the AI Agent needs to know:
 This is a list of things the AI Agent needs to know, but also needs to know how to author, in collaboration with various project collaborators (product, design, architecture, security, data, engineers).
 
@@ -99,4 +96,3 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
       - This should be compared against epics/features to evaluate system completeness
       - This should be compared against system design documents to evaluate system correctness
         - when there is drift, prompt developer to determine if the system or the system design documents need to be updated
->>>>>>> Stashed changes
