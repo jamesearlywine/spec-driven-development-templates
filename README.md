@@ -91,7 +91,7 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
         - Cache
 
 6. As Built
-  - A description of the current system state, as it is built right now
-    - This should be compared against epics/features to evaluate system completeness
-    - This should be compared against system design documents to evaluate system correctness
-      - when there is drift, prompt developer to determine if the system or the system design documents need to be updated
+    - A description of the current system state, as it is built right now
+      - This should be compared against epics/features to evaluate system completeness
+      - This should be compared against system design documents to evaluate system correctness
+        - when there is drift, prompt developer to determine if the system or the system design documents need to be updated
