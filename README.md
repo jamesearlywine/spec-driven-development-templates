@@ -1,7 +1,7 @@
 # spec-driven-development-templates
 
 ## Things the AI Agent needs to know:
-This is a list of things the AI Agent needs to know, but also needs to know how to author, in collaboration with various project collaborators (product, design, architect, security, data, engineer).
+This is a list of things the AI Agent needs to know, but also needs to know how to author, in collaboration with various project collaborators (product, design, architecture, security, data, engineers).
 
 1. Specification conventions
     - Structure
