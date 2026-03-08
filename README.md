@@ -89,7 +89,7 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
         - CDN
         - Cache
 
-      - ..who knows what else..
+      - ..whatever else..
 
 6. As Built
     - A description of the current system state, as it is built right now
