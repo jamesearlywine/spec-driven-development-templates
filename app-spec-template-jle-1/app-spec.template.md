@@ -27,8 +27,9 @@ specs/
 		- technology-selection.spec.md
 		- authorization.model.drawio
 		- authorization.spec.md
-	- /networking
+	- /network
 		- network-topology.drawio
+		- network.md
 
 ### Observability
 /observability
