@@ -160,7 +160,7 @@ As-Built is a **required** artifact for verification and drift detection.
 
 ## Example folder structure
 
-Tree reflects `app-spec-template-jle-1/example-app-task-tracker/spec`. The spec root may be named `spec/` or `specs/`.
+Tree reflects `app-spec-template-jle-1/example-app-task-tracker/spec`.
 
 ```
 spec/
@@ -170,7 +170,7 @@ spec/
 ├── application-events.spec.md         (optional at root; can live under system-design/application/)
 ├── application-entities.spec.md
 ├── application-entities.drawio        (optional)
-├── as-built.md                        (add when required)
+├── as-built.md
 ├── product-design/
 │   ├── product-vision.spec.md
 │   ├── product-requirements.md
@@ -272,6 +272,9 @@ spec/
     └── testing/
     │   ├── testing-strategy.spec.md
     │   └── e2e-testing-strategy.spec.md
+implementation/
+├── frontend/
+├── backend/
 ```
 
 ---
