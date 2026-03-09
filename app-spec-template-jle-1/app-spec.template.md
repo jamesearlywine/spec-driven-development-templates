@@ -67,19 +67,21 @@ spec/system-design/application/
 ├── backend/
 │   ├── technology-selection.spec.md
 │   ├── technology-selection.research.md
-│   ├── (optional at backend level: backend-architecture.drawio, services-map.drawio, systems-map.drawio)
+│   ├── backend-architecture.drawio   # (Optional)
+│   ├── services-map.drawio           # (Optional)
 │   └── <component-name>/             # e.g. service-A, data-store-A
+│       ├── overview.md               # (Optional)
 │       ├── constitution.md
-│       ├── service-configuration.md  # or configuration.md
+│       ├── configuration.md         # or service-configuration.md
 │       ├── deployment-strategy.spec.md
 │       ├── observability.spec.md
 │       ├── testing-strategy.spec.md
 │       ├── technology-selection.spec.md
 │       ├── technology-selection.research.md
-│       ├── application-events.spec.md           # (Optional, for services)
-│       ├── application-events.sequence-diagram.drawio
+│       ├── application-events.spec.md            # (Optional)
+│       ├── application-events.sequence-diagram.drawio  # (Optional)
 │       ├── coding-style.spec.md                  # (Optional)
-│       └── (optional: overview.md, security.md, system-events.dfd.drawio)
+│       └── security.md                           # (Optional)
 │   └── cron-driven-processes/        # (Optional) Scheduled/async processes
 │       ├── constitution.md
 │       ├── deployment-strategy.spec.md
@@ -186,7 +188,7 @@ Use these steps to create a new app spec from this template (e.g. for a new prod
    - **application/**
      - Add `application-events.spec.md` and `application-entities.spec.md` if not only at root.
      - Optionally add `services-map/` with services.md and drawios when you need service topology; or use backend-level drawios (e.g. backend-architecture.drawio, services-map.drawio, systems-map.drawio).
-     - Under **backend/**: add `technology-selection.spec.md` and `technology-selection.research.md`; optionally add backend-level drawios (backend-architecture.drawio, services-map.drawio, systems-map.drawio); for each backend component create `<component-name>/` with constitution, service-configuration (or configuration), deployment-strategy, observability, testing-strategy, technology-selection. Add cron-driven-processes and process subfolders if needed.
+     - Under **backend/**: add `technology-selection.spec.md` and `technology-selection.research.md`; optionally add backend-level drawios (backend-architecture.drawio, services-map.drawio, systems-map.drawio); for each backend component create `<component-name>/` with constitution, configuration (or service-configuration), deployment-strategy, observability, testing-strategy, technology-selection. Add cron-driven-processes and process subfolders if needed.
      - Under **frontend/**: optionally add frontend-level layout drawios (e.g. ui-layout.drawio); create a named instance (e.g. `<frontend-name>/`) with deployment-strategy, observability, testing-strategy, technology-selection, ui-application-events, and optionally styleguide.md and UI layout drawios (ui-layout.drawio, ui-general-layout.drawio), and `pages/` and `components/` subfolders.
    - **security/**
      - Add security-controls.spec.md (and optional .research); create `authentication/` and `authorization/` with authentication.spec.md, authorization.spec.md, technology-selection; create `network/` with network.drawio (and optionally network.md).
