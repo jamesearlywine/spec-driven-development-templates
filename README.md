@@ -165,9 +165,8 @@ Tree reflects `app-spec-template-jle-1/example-app-task-tracker/spec`.
 ```
 spec/
 ├── constitution.md
-├── spec-rules.md
 ├── user-personas.spec.md
-├── application-events.spec.md         (optional at root; can live under system-design/application/)
+├── application-events.spec.md
 ├── application-entities.spec.md
 ├── application-entities.drawio        (optional)
 ├── as-built.md
