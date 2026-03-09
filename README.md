@@ -199,7 +199,7 @@ spec/
     │   │   ├── (optional: backend-architecture.drawio, services-map.drawio, systems-map.drawio)
     │   │   ├── service-A/             (or data-store-A, etc.)
     │   │   │   ├── constitution.md
-    │   │   │   ├── service-configuration.md
+    │   │   │   ├── configuration.md   (or service-configuration.md)
     │   │   │   ├── deployment-strategy.spec.md
     │   │   │   ├── observability.spec.md
     │   │   │   ├── testing-strategy.spec.md
