@@ -101,3 +101,15 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
       - This should be compared against epics/features to evaluate system completeness
       - This should be compared against system design documents to evaluate system correctness
         - when there is drift, prompt developer to determine if the system or the system design documents need to be updated
+
+7. Change Management
+- Phase 1 - Changelog
+  - Epics
+    - Stories
+
+- Phase 2 - Design Specifications
+  - Product Design
+  - System Design
+
+- Phase 3 - Build/Test/Deploy
+  - Implementation
