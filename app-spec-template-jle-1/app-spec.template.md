@@ -21,6 +21,7 @@ All specification artifacts live under one root: **spec/** (or **specs/**). That
   - `application-events.spec.md` — (Optional at root; can live under system-design/application/) What actions happen; sequence/flow.
   - `application-entities.spec.md` — Entities the system operates on; can be at root or under system-design/application/.
   - `application-entities.drawio` — (Optional) Entity relationship diagram.
+  - `application-events.drawio` — (Optional) Events/sequence diagram at root.
   - `as-built.md` — (Required once you track state) Current system state for drift review.
 
 - **product-design/** — Product vision, requirements, user flows, and epics.
@@ -66,6 +67,7 @@ spec/system-design/application/
 ├── backend/
 │   ├── technology-selection.spec.md
 │   ├── technology-selection.research.md
+│   ├── (optional at backend level: backend-architecture.drawio, services-map.drawio, systems-map.drawio)
 │   └── <component-name>/             # e.g. service-A, data-store-A
 │       ├── constitution.md
 │       ├── service-configuration.md  # or configuration.md
@@ -77,7 +79,7 @@ spec/system-design/application/
 │       ├── application-events.spec.md           # (Optional, for services)
 │       ├── application-events.sequence-diagram.drawio
 │       ├── coding-style.spec.md                  # (Optional)
-│       └── (optional: overview.md, security.md)
+│       └── (optional: overview.md, security.md, system-events.dfd.drawio)
 │   └── cron-driven-processes/        # (Optional) Scheduled/async processes
 │       ├── constitution.md
 │       ├── deployment-strategy.spec.md
@@ -91,6 +93,7 @@ spec/system-design/application/
 │           ├── plan.md
 │           └── tasks.md
 └── frontend/
+    ├── (optional at frontend level: ui-layout.drawio, ui-container drawio)
     └── <frontend-name>/              # e.g. frontend-A (named instance)
         ├── deployment-strategy.spec.md
         ├── observability.spec.md
@@ -98,6 +101,9 @@ spec/system-design/application/
         ├── technology-selection.spec.md
         ├── technology-selection.research.md
         ├── ui-application-events.spec.md
+        ├── styleguide.md             # (Optional) or style-guide.md
+        ├── ui-layout.drawio          # (Optional) UI layout diagram
+        ├── ui-general-layout.drawio  # (Optional)
         ├── pages/
         │   └── page-1.requirements.spec.md, .research.md, .wireframe.drawio, .figma.md
         └── components/
@@ -148,7 +154,7 @@ spec/system-design/deployment/
 └── deployment-strategy.spec.md
 
 spec/system-design/testing/
-├── testing-strategy.spec.md
+├── testing-strategy.spec.md         # (Optional; recommended)
 └── e2e-testing-strategy.spec.md
 ```
 
@@ -179,9 +185,9 @@ Use these steps to create a new app spec from this template (e.g. for a new prod
    - Create `spec/system-design/` with subfolders: `application/`, `security/`, `observability/`, `deployment/`, `testing/`.
    - **application/**
      - Add `application-events.spec.md` and `application-entities.spec.md` if not only at root.
-     - Optionally add `services-map/` with services.md and drawios when you need service topology.
-     - Under **backend/**: add `technology-selection.spec.md` and `technology-selection.research.md`; for each backend component create `<component-name>/` with constitution, service-configuration (or configuration), deployment-strategy, observability, testing-strategy, technology-selection. Add cron-driven-processes and process subfolders if needed.
-     - Under **frontend/**: create a named instance (e.g. `<frontend-name>/`) with deployment-strategy, observability, testing-strategy, technology-selection, ui-application-events, and `pages/` and `components/` subfolders.
+     - Optionally add `services-map/` with services.md and drawios when you need service topology; or use backend-level drawios (e.g. backend-architecture.drawio, services-map.drawio, systems-map.drawio).
+     - Under **backend/**: add `technology-selection.spec.md` and `technology-selection.research.md`; optionally add backend-level drawios (backend-architecture.drawio, services-map.drawio, systems-map.drawio); for each backend component create `<component-name>/` with constitution, service-configuration (or configuration), deployment-strategy, observability, testing-strategy, technology-selection. Add cron-driven-processes and process subfolders if needed.
+     - Under **frontend/**: optionally add frontend-level layout drawios (e.g. ui-layout.drawio); create a named instance (e.g. `<frontend-name>/`) with deployment-strategy, observability, testing-strategy, technology-selection, ui-application-events, and optionally styleguide.md and UI layout drawios (ui-layout.drawio, ui-general-layout.drawio), and `pages/` and `components/` subfolders.
    - **security/**
      - Add security-controls.spec.md (and optional .research); create `authentication/` and `authorization/` with authentication.spec.md, authorization.spec.md, technology-selection; create `network/` with network.drawio (and optionally network.md).
    - **observability/**
@@ -189,7 +195,7 @@ Use these steps to create a new app spec from this template (e.g. for a new prod
    - **deployment/**
      - Add deployment-strategy.spec.md.
    - **testing/**
-     - Add testing-strategy.spec.md and e2e-testing-strategy.spec.md.
+     - Add e2e-testing-strategy.spec.md; optionally add testing-strategy.spec.md (recommended).
 
 5. **Copy from example-app-task-tracker (optional)**
    - To save time, copy the full `example-app-task-tracker/spec/` tree into your new app folder, then rename and edit:
