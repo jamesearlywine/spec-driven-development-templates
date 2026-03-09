@@ -1,5 +1,11 @@
 # spec-driven-development-templates
 
+**NOTE** Not a real spec, at this point it's just a file/folder structure that is suggestive of what a real spec would look like, how it would be structured.
+
+@TODO:
+- Spec Structure - Spec Linkages
+- Process - Steps to Update Spec, Design and Implementation
+
 ## Purpose
 
 This repository provides **spec-driven development templates** for human and AI collaboration. Teams use these templates to author and maintain linked specifications that guide what to build, how it fits together, and how to verify it.
