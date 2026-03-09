@@ -273,7 +273,9 @@ spec/
     │   └── e2e-testing-strategy.spec.md
 implementation/
 ├── frontend/
+│   ├──..
 ├── backend/
+│   ├──..
 ```
 
 ---
