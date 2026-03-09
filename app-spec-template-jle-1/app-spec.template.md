@@ -58,12 +58,6 @@ Epics are large units of work (what and why); each feature story has spec → pl
 
 ```
 spec/system-design/application/
-├── application-events.spec.md
-├── application-entities.spec.md
-├── services-map/                    # (Optional; add when needed)
-│   ├── services.md
-│   ├── service-dependency-graph.drawio
-│   └── services-integration-use-case-A.data-flow.drawio
 ├── backend/
 │   ├── technology-selection.spec.md
 │   ├── technology-selection.research.md
