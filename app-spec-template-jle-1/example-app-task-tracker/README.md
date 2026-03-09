@@ -10,7 +10,7 @@ This folder is a **first draft** of an application spec **Task Tracker**, genera
 | Epic/story names | task-management, user-management; stories e.g. task-list, download-data, new-user-account-provisioning |
 | Pages/components | page-1, component-1 as placeholders |
 | Backend | 1 service (service-A), 1 data store (data-store-A), cron-driven-processes/process-A |
-| Backend/frontend drawios | Optional: backend-level (backend-architecture, services-map, systems-map); frontend-A (styleguide, ui-layout, ui-general-layout); frontend-level (ui-layout, ui-container) |
+| Backend/frontend drawios | Optional: services-map; frontend-A (styleguide, ui-layout, ui-general-layout); frontend-level (ui-layout, ui-container) |
 | Drawio | application-events, application-entities at root; network under security; per-component as needed |
 | Figma | Fill in details later |
 | Authentication | OIDC from Cognito |
