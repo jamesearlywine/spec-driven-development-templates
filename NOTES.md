@@ -103,13 +103,20 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
         - when there is drift, prompt developer to determine if the system or the system design documents need to be updated
 
 7. Change Management
-- Phase 1 - Changelog
-  - Epics
-    - Stories
+    - Phase 1 - Changelog (Immutable)
+      - Epics
+        - Stories
 
-- Phase 2 - Design Specifications
-  - Product Design
-  - System Design
+    - Phase 2 - Design Specifications (Mutable)
+      - Product Design
+      - System Design
 
-- Phase 3 - Build/Test/Deploy
-  - Implementation
+    - Phase 3 - Build/Test/Deploy
+      - Implementation
+
+    - Notes
+      - For each phase, the AI should have formal guidance on how to collaborate with the human-in-the-loop.
+      - For AI-generated change, a change plan/diff should be created for human-in-the-loop to review and approve, when
+        - Pairing to create epics and stories
+        - Pairing to create design documents
+        - Pairing to implement stories in accordance with relevant design documents
