@@ -79,9 +79,14 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
         - DataPipeline
         - Orchestration
         - CronJob
-        - Eventbus
-          - EventProducer
-          - EventConsumer
+        - Messaging
+          - EventBus
+            - EventProducer
+            - EventConsumer
+          - Topic
+          - Queue
+          - StreamingAppendOnlyLog
+            - Dynamodb
 
       - Frontend
         - UI
