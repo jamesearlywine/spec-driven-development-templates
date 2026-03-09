@@ -91,7 +91,7 @@ Use these terms consistently so that epic, feature story, domain, and component 
 
 - **What exists**: Product vision and product requirements under **product-design/**; application-level docs (application-events, application-entities, optionally **services-map/**) under **system-design/application/** or at spec root; domain docs (security, observability, deployment, testing) under **system-design/**; component docs per component.
   - **application-events.spec.md**, **application-entities.spec.md**: Can live at spec root or under system-design/application/ (optionally with application-entities.drawio at root).
-  - **services-map/** (optional): Under system-design/application/, add when needed — `services.md`, `service-dependency-graph.drawio`, `services-integration-use-case-A.data-flow.drawio` for data flow and service topology.
+  - **services-map/** (optional): Under system-design/application/, add when needed — `services.md`, `service-dependency-graph.drawio`, `services-integration-use-case-A.data-flow.drawio` for data flow and service topology. Alternatively, backend-level drawios (e.g. `backend-architecture.drawio`, `services-map.drawio`, `systems-map.drawio`) under system-design/application/backend/.
   - **network**: Under **system-design/security/network/** — `network.drawio` (optionally `network.md`). Not at spec root.
   - **deployment**: **system-design/deployment/** — e.g. deployment-strategy.spec.md.
   - **testing**: **system-design/testing/** — e.g. testing-strategy.spec.md, e2e-testing-strategy.spec.md.
@@ -160,7 +160,7 @@ As-Built is a **required** artifact for verification and drift detection.
 
 ## Example folder structure
 
-Tree reflects `app-spec-template-jle-1/example-app-task-tracker/spec`.
+Tree reflects `app-spec-template-jle-1/example-app-task-tracker/spec`. At app root, `implementation/` (frontend/, backend/) is a **sibling** of `spec/`, not under it.
 
 ```
 spec/
@@ -169,6 +169,7 @@ spec/
 ├── application-events.spec.md
 ├── application-entities.spec.md
 ├── application-entities.drawio        (optional)
+├── application-events.drawio          (optional)
 ├── as-built.md
 ├── product-design/
 │   ├── product-vision.spec.md
@@ -195,6 +196,7 @@ spec/
     │   ├── backend/
     │   │   ├── technology-selection.spec.md
     │   │   ├── technology-selection.research.md
+    │   │   ├── (optional: backend-architecture.drawio, services-map.drawio, systems-map.drawio)
     │   │   ├── service-A/             (or data-store-A, etc.)
     │   │   │   ├── constitution.md
     │   │   │   ├── service-configuration.md
@@ -235,6 +237,7 @@ spec/
     │           ├── technology-selection.spec.md
     │           ├── technology-selection.research.md
     │           ├── ui-application-events.spec.md
+    │           ├── (optional: styleguide.md, ui-layout.drawio, ui-general-layout.drawio)
     │           ├── pages/
     │           │   └── page-1.requirements.spec.md, page-1.research.md, page-1.wireframe.drawio, page-1.figma.md
     │           └── components/
@@ -252,7 +255,8 @@ spec/
     │   │   ├── technology-selection.spec.md
     │   │   └── technology-selection.research.md
     │   └── network/
-    │       └── network.drawio          (optionally network.md)
+    │       ├── network.drawio
+    │       └── network.md              (optional)
     ├── observability/
     │   ├── technology-selection.spec.md
     │   ├── technology-selection.research.md
@@ -269,13 +273,18 @@ spec/
     ├── deployment/
     │   └── deployment-strategy.spec.md
     └── testing/
-    │   ├── testing-strategy.spec.md
+    │   ├── testing-strategy.spec.md    (optional; recommended)
     │   └── e2e-testing-strategy.spec.md
+```
+
+At app root (sibling of `spec/`):
+
+```
 implementation/
 ├── frontend/
-│   ├──..
-├── backend/
-│   ├──..
+│   └── ..
+└── backend/
+    └── ..
 ```
 
 ---
