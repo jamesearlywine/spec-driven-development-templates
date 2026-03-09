@@ -91,7 +91,7 @@ Use these terms consistently so that epic, feature story, domain, and component 
 
 - **What exists**: Product vision and product requirements under **product-design/**; application-level docs (application-events, application-entities, optionally **services-map/**) under **system-design/application/** or at spec root; domain docs (security, observability, deployment, testing) under **system-design/**; component docs per component.
   - **application-events.spec.md**, **application-entities.spec.md**: Can live at spec root or under system-design/application/ (optionally with application-entities.drawio at root).
-  - **services-map/** (optional): Under system-design/application/, add when needed — `services.md`, `service-dependency-graph.drawio`, `services-integration-use-case-A.data-flow.drawio` for data flow and service topology. Alternatively, backend-level drawios (e.g. `backend-architecture.drawio`, `services-map.drawio`, `systems-map.drawio`) under system-design/application/backend/.
+  - **services-map/** (optional): Under system-design/application/, add when needed — `services.md`, `service-dependency-graph.drawio`, `services-integration-use-case-A.data-flow.drawio` for data flow and service topology. Alternatively, backend-level drawios (e.g. `backend-architecture.drawio`, `services-map.drawio`) under system-design/application/backend/.
   - **network**: Under **system-design/security/network/** — `network.drawio` (optionally `network.md`). Not at spec root.
   - **deployment**: **system-design/deployment/** — e.g. deployment-strategy.spec.md.
   - **testing**: **system-design/testing/** — e.g. testing-strategy.spec.md, e2e-testing-strategy.spec.md.
@@ -196,10 +196,11 @@ spec/
     │   ├── backend/
     │   │   ├── technology-selection.spec.md
     │   │   ├── technology-selection.research.md
-    │   │   ├── (optional: backend-architecture.drawio, services-map.drawio, systems-map.drawio)
-    │   │   ├── service-A/             (or data-store-A, etc.)
+    │   │   ├── backend-architecture.drawio
+    │   │   ├── services-map.drawio     (optional)
+    │   │   ├── service-A/              (or data-store-A, etc.)
     │   │   │   ├── constitution.md
-    │   │   │   ├── configuration.md   (or service-configuration.md)
+    │   │   │   ├── configuration.md    (or service-configuration.md)
     │   │   │   ├── deployment-strategy.spec.md
     │   │   │   ├── observability.spec.md
     │   │   │   ├── testing-strategy.spec.md
