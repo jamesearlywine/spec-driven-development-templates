@@ -77,11 +77,9 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
         - Cache
         - SearchIndex
         - DataPipeline
+        - Messaging
         - Orchestration
-        - CronJob
-        - Eventbus
-          - EventProducer
-          - EventConsumer
+        - Cron
 
       - Frontend
         - UI

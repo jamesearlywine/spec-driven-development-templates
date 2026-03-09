@@ -90,7 +90,6 @@ Use these terms consistently so that epic, feature story, domain, and component 
 ## System design documents
 
 - **What exists**: Global system docs (e.g. product vision, requirements, application events/entities), domain docs (per domain), and component docs (overview plus optional docs per component type). Under `specs/`, global system design can include:
-  - **network/** — `network.md`, `network-topology.drawio` (VPCs, subnets, gateways, firewalls, TLS requirements).
   - **services-map/** — `services.md`, `service-dependency-graph.drawio`, `services-integration-use-case-A.data-flow.drawio` (data flow diagrams and service topology).
 - **Where they live**: See **Example folder structure**; global at root (and in `network/`, `services-map/`), domains in domain folders, components under their domain.
 - **When to read**: Before changing a domain or component; when doing impact analysis for a feature.

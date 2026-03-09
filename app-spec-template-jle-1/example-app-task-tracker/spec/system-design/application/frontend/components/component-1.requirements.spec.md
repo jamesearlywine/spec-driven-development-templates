@@ -19,3 +19,5 @@
 
 - **Page(s)**: <!-- page-1 -->
 - **Product requirements**: <!-- REQ-x -->
+- **Wireframes**: <!-- REQ-x -->
+- **Mockups**: <!-- REQ-x -->
