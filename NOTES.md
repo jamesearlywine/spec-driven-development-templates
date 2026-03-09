@@ -112,7 +112,7 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
       - System Design
 
     - Phase 3 - Build/Test/Deploy
-      - Implementation
+      - Implementation (Epic + Story + Relevent Design Specs => Code)
 
     - Notes
       - For each phase, the AI should have formal guidance on how to collaborate with the human-in-the-loop.
@@ -120,3 +120,6 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
         - Pairing to create epics and stories
         - Pairing to create design documents
         - Pairing to implement stories in accordance with relevant design documents
+
+8. Next steps
+    - flesh out a real spec for example-app-task-tracker
