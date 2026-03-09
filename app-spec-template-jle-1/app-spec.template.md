@@ -1,133 +1,211 @@
-# App Spec Template
-This template can be used to scaffold a spec-driven project.  Specs are co-located near their appliction scope.
+# Application spec template
 
-## Design
-These sections are exclusively design sections
+This template describes the **application-spec** structure used by **example-app-task-tracker** and how to create a new instance for your own app. Specs are co-located near their application scope under a single **spec/** root.
 
-### Application
-specs/
-(root - high-level)
-- app-spec.template.md // meta: an overview of this app-spec-template
-- product-vision.spec.md // why?
-- product-requirements.md // what to build?
-- user-personas.spec.md // who?
-- application-events.spec.md // what actions happen? .. sequence diagrams, flow charts
-- application-entities.spec.md // to what entities? .. entity relationship diagrams
+---
+
+## Reference: example-app-task-tracker
+
+The folder **example-app-task-tracker** is a concrete instance of this template for the app **Task Tracker**. Its `spec/` directory layout is the source of truth for the structure below. Use it to copy files or to compare when creating a new instance.
+
+---
+
+## Spec root layout
+
+All specification artifacts live under one root: **spec/** (or **specs/**). That root contains:
+
+- **Governance and root-level design**
+  - `constitution.md` — Principles and constraints for the project.
+  - `spec-rules.md` — (Optional) Rules for how specs are written and linked.
+  - `user-personas.spec.md` — Who the product serves.
+  - `application-events.spec.md` — (Optional at root; can live under system-design/application/) What actions happen; sequence/flow.
+  - `application-entities.spec.md` — Entities the system operates on; can be at root or under system-design/application/.
+  - `application-entities.drawio` — (Optional) Entity relationship diagram.
+  - `as-built.md` — (Required once you track state) Current system state for drift review.
+
+- **product-design/** — Product vision, requirements, user flows, and epics.
+- **system-design/** — Application, security, observability, deployment, testing.
+
+---
+
+## Product design
+
+```
+spec/product-design/
+├── product-vision.spec.md      # Why we're building this
+├── product-requirements.md     # What to build
+├── user-flows/
+│   ├── README.md
+│   ├── application.figma.md    # (Optional) Figma links
+│   └── style-guide.md          # (Optional) Visual/UX guidelines
+└── epics/
+    └── <epic-name>/
+        └── <story-name>/
+            ├── research.md     # (Optional)
+            ├── spec.md         # Definition of done, acceptance criteria
+            ├── plan.md         # Which components change
+            └── tasks.md        # Actionable steps
+```
+
+Epics are large units of work (what and why); each feature story has spec → plan → tasks (and optional research).
+
+---
+
+## System design
+
+### Application domain
+
+```
+spec/system-design/application/
+├── application-events.spec.md
+├── application-entities.spec.md
+├── services-map/                    # (Optional; add when needed)
+│   ├── services.md
+│   ├── service-dependency-graph.drawio
+│   └── services-integration-use-case-A.data-flow.drawio
+├── backend/
+│   ├── technology-selection.spec.md
+│   ├── technology-selection.research.md
+│   └── <component-name>/             # e.g. service-A, data-store-A
+│       ├── constitution.md
+│       ├── service-configuration.md  # or configuration.md
+│       ├── deployment-strategy.spec.md
+│       ├── observability.spec.md
+│       ├── testing-strategy.spec.md
+│       ├── technology-selection.spec.md
+│       ├── technology-selection.research.md
+│       ├── application-events.spec.md           # (Optional, for services)
+│       ├── application-events.sequence-diagram.drawio
+│       ├── coding-style.spec.md                  # (Optional)
+│       └── (optional: overview.md, security.md)
+│   └── cron-driven-processes/        # (Optional) Scheduled/async processes
+│       ├── constitution.md
+│       ├── deployment-strategy.spec.md
+│       ├── observability.spec.md
+│       ├── testing-strategy.spec.md
+│       ├── technology-selection.spec.md
+│       ├── technology-selection.research.md
+│       └── process-A/
+│           ├── research.md
+│           ├── spec.md
+│           ├── plan.md
+│           └── tasks.md
+└── frontend/
+    └── <frontend-name>/              # e.g. frontend-A (named instance)
+        ├── deployment-strategy.spec.md
+        ├── observability.spec.md
+        ├── testing-strategy.spec.md
+        ├── technology-selection.spec.md
+        ├── technology-selection.research.md
+        ├── ui-application-events.spec.md
+        ├── pages/
+        │   └── page-1.requirements.spec.md, .research.md, .wireframe.drawio, .figma.md
+        └── components/
+            └── component-1.requirements.spec.md, .research.md, .wireframe.drawio
+```
 
 ### Security
-- /security
-	- security-controls.research.md
-	- security-controls.spec.md
-	- /authentication
-		- technology-selection.research.md
-		- technology-selection.spec.md
-		- authentication.spec.md
-	- /authorization
-		- technology-selection.research.md
-		- technology-selection.spec.md
-		- authorization.model.drawio
-		- authorization.spec.md
-	- /network
-		- network-topology.drawio
-		- network.md
+
+```
+spec/system-design/security/
+├── security-controls.spec.md
+├── security-controls.research.md
+├── authentication/
+│   ├── authentication.spec.md
+│   ├── technology-selection.spec.md
+│   └── technology-selection.research.md
+├── authorization/
+│   ├── authorization.spec.md
+│   ├── authorization.model.drawio
+│   ├── technology-selection.spec.md
+│   └── technology-selection.research.md
+└── network/
+    └── network.drawio                # optionally network.md
+```
 
 ### Observability
-/observability
-	- technology-selection.research.md
-	- technology-selection.spec.md
-	- logging.spec.md // logging technologies
-	- alerts.spec.md // alerting technologies
-	- /metrics
-		metric-A.spec.md // includes alert thresholds
-	- /dashboards // composed of metrics
-		- technology-selection.research.md
-		- technology-selection.spec.md
-		- /dashboard-A
-			- dashboard-A.spec.md
-			- dashboard-A.wireframe.drawio
 
-## Features
-This section is where we plan to build the various parts of our application.
-- epics/
-	- some-epic/
-		- some-story/
-			- research.md
-			- spec.md
-			- plan.md
-			- tasks.md
-		- some-other-story/
-			- research.md
-			- spec.md
-			- plan.md
-			- tasks.md
+```
+spec/system-design/observability/
+├── technology-selection.spec.md
+├── technology-selection.research.md
+├── logging.spec.md
+├── alerts.spec.md
+├── metrics/
+│   └── metric-A.spec.md
+└── dashboards/
+    ├── technology-selection.spec.md
+    ├── technology-selection.research.md
+    └── dashboard-A/
+        ├── dashboard-A.spec.md
+        └── dashboard-A.wireframe.drawio
+```
 
-## Technology
-This section is a mix of planning and execution.  This planning is non-functional and localized in its technical scope.
+### Deployment and testing
 
-Root folder (defaults for all technology areas; sub-sections inherit and may override):
-	- constitution.md
-	- technology-selection.research.md
-	- technology-selection.spec.md
-	- testing-strategy.spec.md
-	- deployment-strategy.spec.md
+```
+spec/system-design/deployment/
+└── deployment-strategy.spec.md
 
-	- /frontend // Page and component specs reference product-requirements and application-events/entities; the traceability chain is product-requirements → application-events/entities → pages → components.
-		- technology-selection.research.md
-		- technology-selection.spec.md
-		- testing-strategy.spec.md
-		- deployment-strategy.spec.md
-		- observability.spec.md
+spec/system-design/testing/
+├── testing-strategy.spec.md
+└── e2e-testing-strategy.spec.md
+```
 
-		- style.spec.md
-		- pages/
-			- page-1.requirements.spec.md
-			- page-1.research.md
-			- page-1.wireframe.drawio
-			- page-1.figma.md
-		- components/
-			- component-1.requirements.spec.md
-			- component-1.research.md
-			- component-1.wireframe.drawio
-			- component-1.figma.md
-		- ui-application-events.spec.md
-			// Component-level slice: events these components participate in (not a duplicate of root application-events.spec.md)
+---
 
-	- /backend
-		- /service-A
-			- constitution.md
-			- technology-selection.research.md
-			- technology-selection.spec.md
-			- observability.spec.md
-			- testing-strategy.spec.md
-			- deployment-strategy.spec.md
+## How to create a new application-spec instance
 
-			- application-events.sequence-diagram.drawio
-			- application-events.spec.md
-			- service-A.openapi.yaml
-			- coding-style.spec.md
-			- system-events.dfd.drawio
-			- service-configuration.md
+Use these steps to create a new app spec from this template (e.g. for a new product or repo).
 
-		- /data-store-A
-			- constitution.md
-			- technology-selection.research.md
-			- technology-selection.spec.md
-			- testing-strategy.spec.md
-			- deployment-strategy.spec.md
-			- observability.spec.md
+1. **Create the app folder and spec root**
+   - Create a folder for the app (e.g. `my-app-name/`).
+   - Inside it, create `spec/` (or `specs/`) as the single root for all spec artifacts.
 
-			- entity-relationship-diagram.drawio
+2. **Add root-level governance and design**
+   - Add `spec/constitution.md` (principles and constraints).
+   - Optionally add `spec/spec-rules.md` (how specs are written and linked).
+   - Add `spec/user-personas.spec.md`.
+   - Add `spec/application-events.spec.md` and `spec/application-entities.spec.md` (at root and/or under `spec/system-design/application/` later).
+   - Add `spec/as-built.md` when you start tracking current system state (can be a placeholder at first).
 
-		- /cron-driven-processes
-			- constitution.md
-			- technology-selection.research.md
-			- technology-selection.spec.md
-			- testing-strategy.spec.md
-			- deployment-strategy.spec.md
-			- observability.spec.md
+3. **Scaffold product-design**
+   - Create `spec/product-design/`.
+   - Add `product-vision.spec.md` and `product-requirements.md`.
+   - Create `product-design/user-flows/` with README.md (and optionally application.figma.md, style-guide.md).
+   - Create `product-design/epics/`. For each epic, create `<epic-name>/<story-name>/` with `spec.md`, `plan.md`, `tasks.md` (and optional `research.md`).
 
-			- /process-A
-				- research.md
-				- spec.md
-				- plan.md
-				- tasks.md
+4. **Scaffold system-design**
+   - Create `spec/system-design/` with subfolders: `application/`, `security/`, `observability/`, `deployment/`, `testing/`.
+   - **application/**
+     - Add `application-events.spec.md` and `application-entities.spec.md` if not only at root.
+     - Optionally add `services-map/` with services.md and drawios when you need service topology.
+     - Under **backend/**: add `technology-selection.spec.md` and `technology-selection.research.md`; for each backend component create `<component-name>/` with constitution, service-configuration (or configuration), deployment-strategy, observability, testing-strategy, technology-selection. Add cron-driven-processes and process subfolders if needed.
+     - Under **frontend/**: create a named instance (e.g. `<frontend-name>/`) with deployment-strategy, observability, testing-strategy, technology-selection, ui-application-events, and `pages/` and `components/` subfolders.
+   - **security/**
+     - Add security-controls.spec.md (and optional .research); create `authentication/` and `authorization/` with authentication.spec.md, authorization.spec.md, technology-selection; create `network/` with network.drawio (and optionally network.md).
+   - **observability/**
+     - Add technology-selection, logging.spec.md, alerts.spec.md; create `metrics/` and `dashboards/` with at least one metric and one dashboard if needed.
+   - **deployment/**
+     - Add deployment-strategy.spec.md.
+   - **testing/**
+     - Add testing-strategy.spec.md and e2e-testing-strategy.spec.md.
+
+5. **Copy from example-app-task-tracker (optional)**
+   - To save time, copy the full `example-app-task-tracker/spec/` tree into your new app folder, then rename and edit:
+     - Replace placeholders (e.g. frontend-A, service-A, data-store-A, epic and story names) with your app’s names.
+     - Update constitution, product-vision, product-requirements, user-personas, and application-events/entities with your content.
+     - Add or remove backend/frontend components and epics to match your scope.
+
+6. **Link and maintain**
+   - Add explicit references between product requirements → epics/stories → system-design components.
+   - Keep `as-built.md` updated after each deploy or milestone for drift review.
+
+---
+
+## Traceability
+
+- **Product → features:** product-requirements and product-vision link to epics and stories.
+- **Features → implementation:** Each story’s plan.md and tasks.md reference which system-design components (backend, frontend) change.
+- **Application → components:** application-events and application-entities are referenced by backend services and frontend pages/components.
+- **As-built:** Compare as-built.md to specs and system design to detect drift; update either code or specs when they diverge.
