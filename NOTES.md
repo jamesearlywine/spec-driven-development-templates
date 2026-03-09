@@ -123,3 +123,13 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
 
 8. Next steps
     - flesh out a real spec for example-app-task-tracker
+
+9. Questions
+    - What are the costs of moving so much of the product management, product design, and systems design process into markdown and drawio files?
+    - What design artifacts are best kept outside the repository?
+      - Can AI agent bring them in as needed, example: figma design tokens, mockups, etc.
+    - Is this a net increase/decrease in coding time?
+    - How do we score the engineering quality of the generated application?
+      - How does it compare to a hand-crafted application?
+    - Do these metrics/trade-offs change at various scales?  example: a small app vs. a larger app
+
