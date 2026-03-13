@@ -59,7 +59,7 @@ This is a list of things the AI Agent needs to know, but also needs to know how 
 
         - overview.md
           - reference an architectural diagram that explains where it lives within the broader system
-          - describes the component behavior
+          - describe the component behavior
           - public and private state
           - state management
           - data lifecycle
