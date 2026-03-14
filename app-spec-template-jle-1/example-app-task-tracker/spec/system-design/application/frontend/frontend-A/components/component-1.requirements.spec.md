@@ -19,5 +19,5 @@
 
 - **Page(s)**: <!-- page-1 -->
 - **Product requirements**: <!-- REQ-x -->
-- **Wireframes**: <!-- REQ-x -->
+- **Wireframes**: <!-- ../product-design/user-flows/application.figma.md#-x -->
 - **Mockups**: <!-- REQ-x -->
